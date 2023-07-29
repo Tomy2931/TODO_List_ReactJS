@@ -1,0 +1,40 @@
+li{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    background-color: hsla(227, 100%, 50%, 0.241);
+    color: rgb(255, 255, 255);
+    border: 2px solid;
+    border-radius: 5px;
+    margin: 10px;
+
+    width: 600px;
+    height: 70px;
+    font-size: 1.7rem;
+    font-weight: bold;
+
+    transition: 1s;
+} 
+
+li:hover{
+    font-size: 1.8rem;
+}
+.icon-check{
+    color: rgb(254, 255, 254);
+    position: relative;
+    right: 50px;
+}
+.icon-check:hover,.borrar-item:hover{
+    cursor: pointer;
+   
+}
+.borrar-item:hover{color: red;}
+
+.icon-check--active, .icon-check:hover{
+    color: rgb(13, 255, 0);
+}
+
+.item-text--active{
+    opacity: 0.2;
+}

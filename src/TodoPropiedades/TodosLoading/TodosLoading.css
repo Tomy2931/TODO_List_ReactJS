@@ -1,0 +1,51 @@
+.barraCarga{
+    border: 5px solid rgb(1, 1, 1);
+    width: 500px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: rgb(63, 157, 0);
+    display: flex;
+}
+
+.cajitaCarga{
+    align-items: center;
+    font-size: 1.7rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    position: relative;
+    right: 0px;
+    animation: mover 2s forwards, disminuirTamanio 0.1s 1.88s forwards;  /*El 1.88s de disminuirTamanio indica despues de cuanto tiempo debe iniciar la animacion*/
+    
+    z-index: 1;
+}
+.hoyoCarga{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: black;
+    position: relative;
+    left: 410px;
+}
+
+
+@keyframes mover {
+    0% {
+            left: 0px;
+            rotate: 0deg;
+    }
+    20%{
+        left: 0px;
+        rotate: 0deg;
+    }
+    100% {
+        
+            left: 452px;
+            rotate: 800deg;
+    }
+}
+@keyframes disminuirTamanio {
+    100% {
+        opacity: 0;
+    }
+}
