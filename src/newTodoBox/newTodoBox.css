@@ -1,0 +1,128 @@
+.principal{
+    position: relative;
+    width: 600px;
+    height: 400px;
+    border: 2px solid;
+    border-radius: 10px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.dice-img{
+    width: 50px;
+    position: absolute;
+    top:8%;
+    left:20px;
+    background-color: rgba(193, 193, 193, 0.09);
+    border-radius: 100%;
+}
+
+.dice-img:hover{
+    width: 51px;
+    background-color: rgba(193, 193, 193, 0.574);
+    transition: 1s;
+    cursor: pointer;
+}
+
+.principal-h1{
+    font-size: 1.6rem;
+    margin-top: 50px;
+}
+.principal-text_box{
+    margin-top: 30px;
+    width: 80%;
+    height: 40%;
+    border: 2px solid rgb(0, 217, 255);
+    border-radius: 10px;
+    background-color: rgb(237, 237, 237);
+    color: black;
+    font-weight: lighter;
+    font-size: 1.6rem;
+}
+
+
+.div_button_container{
+    width: 100%;
+    height: 20%;
+    margin-top: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+}
+
+.principal-acept_button,.principal-cancel_button{
+    width: 140px ;
+    height: 60px;
+    border: 1px solid rgb(0, 247, 255) ;
+    border-radius: 5px;
+    background-color: rgba(1, 230, 255, 0.323);
+    font-size: 1rem;
+    font-weight:bolder;
+}
+
+.principal-acept_button:hover,.principal-cancel_button:hover{
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.principal-acept_button:hover{ background-color: rgb(3, 248, 3) ;}
+.principal-cancel_button:hover{background-color: red ;     }
+
+.alertEmpyValue{
+    position: absolute;
+    top: 1%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 50px;
+
+    background-color: red;
+    border-radius: 15px;
+
+    
+    display: flex;
+    justify-content: center;
+    line-height: 50px;
+    animation: alertMoviemiento 0.1s ease-in-out 4;
+}
+
+
+.alertText{
+    font-size: 1.2rem ;
+}
+
+.incompleted{ display: none;}
+.completed{ display: block ;}
+
+
+@keyframes alertMoviemiento {
+    0%{
+        left: 50%;
+    }
+    50%{
+        left: 49%;
+    }
+    100%{
+        left: 50%;
+    }
+}
+
+.pikachu{   
+    width: 710px;
+    position: absolute;
+    top: 40%;
+    left: -20px;
+    animation: pikachu_silla 8s  infinite;
+    z-index: -1;
+  }
+  
+  @keyframes pikachu_silla {
+    0%{
+      left: -40%;
+    }
+    100%{
+      left:101%;
+    }
+}  

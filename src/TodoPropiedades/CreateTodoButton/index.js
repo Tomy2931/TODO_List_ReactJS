@@ -1,10 +1,27 @@
+import react from 'react';
 import './CreateTodoButton.css'
+import { TodoContext } from '../TodoContext';
 
 function CreateTodoButton(){
+  const { openmodal,setOpenmodal}= react.useContext(TodoContext);
     return(
-      <button
+      <button className='addButton'
 
-      onClick={() => console.log('😎')}
+      onClick={() => {
+        // if (openmodal==true){   //Se pregunta al estado por true o false
+        //   setOpenmodal(false)
+        // } else{setOpenmodal(true)} //Se actualiza mediante el actualizador de estado
+        
+          setOpenmodal(!openmodal)  //Version comprimida 
+      }
+        
+      
+     
+        } 
+        // else {setOpenmodal(true)}
+        
+      
+    
 
 
       >+</button>

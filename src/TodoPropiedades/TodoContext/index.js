@@ -14,7 +14,9 @@ function TodoProvider ({ children }){
       } = useLocalStorage('TODOS_STORAGE', []);
     
       const [searchValue, setSearchValue] = React.useState('');
-        
+
+      const [openmodal, setOpenmodal] = React.useState(false);
+      
     
       const completedTodos = todos.filter(todo => (todo.completed)).length //Filtra los objetos del objeto todos que sean true, y recibe la cantidad con el length al final
                                         //todo sin s representa el iterable
@@ -22,6 +24,15 @@ function TodoProvider ({ children }){
       const filterTodos = todos.filter((todo) => {
         return todo.text.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase());
       })
+
+      const addTodo = (text) =>{
+        const newTodos= [...todos];
+        newTodos.push({
+          text,
+          completed:false,
+        })
+        saveTodos(newTodos);
+      }
     
       const checkTodo = (text) => {
         const newTodos= [...todos]; //Hace una copia de todos a newTodos
@@ -51,6 +62,8 @@ function TodoProvider ({ children }){
       }else {
         allCompleted = (completedTodos == totalTodos);
       }
+
+
     
     return(
     <TodoContext.Provider value={{
@@ -60,10 +73,13 @@ function TodoProvider ({ children }){
       totalTodos,
       allCompleted,
       filterTodos,
+      addTodo,
       checkTodo,
       deleteTodo,
       searchValue,
       setSearchValue,
+      openmodal,
+      setOpenmodal,
     }}>
       { children }
     </TodoContext.Provider>

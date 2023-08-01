@@ -1,3 +1,4 @@
+import '../App.css';
 import React from 'react';
 import { TodoCount } from '../TodoPropiedades/TodoCount';
 import { TodoList } from '../TodoPropiedades/TodoList';
@@ -6,18 +7,22 @@ import { TodoItem } from '../TodoPropiedades/TodoItem';
 import { CreateTodoButton } from '../TodoPropiedades/CreateTodoButton';
 import { TodosLoading } from '../TodoPropiedades/TodosLoading'
 import { TodosError } from '../TodoPropiedades/TodosError'
+import {TodoContext} from '../TodoPropiedades/TodoContext';
+import { Modal } from '../Modal';
+import { NewTodoBox } from '../newTodoBox';
 
 
-import '../App.css';
-import {TodoContext} from '../TodoPropiedades/TodoContext/index';
+let caca = true
 
 function AppUI() {
   const {
     loading,
     error,
     filterTodos,
-    completeTodo,
+    checkTodo,
     deleteTodo,
+    openmodal,
+    allCompleted,
   } = React.useContext(TodoContext);
   
   return (
@@ -49,14 +54,21 @@ function AppUI() {
 
             completed={todo.completed}
 
-            onComplete={()=>completeTodo(todo.text)} //Se encapsula la funcion dentro de otra para que se ejecute solo si es llamada
+            onComplete={()=>checkTodo(todo.text)} //Se encapsula la funcion dentro de otra para que se ejecute solo si es llamada
 
             onDelete={()=>deleteTodo(todo.text)}
 
             />))}   
           </TodoList>
         </div>
-        <CreateTodoButton/>
+
+        {!loading &&<CreateTodoButton/>}
+        
+        {openmodal && (
+            <Modal>
+            <NewTodoBox/>
+            </Modal>
+        )}
         </main>
     </>
   );

@@ -7,7 +7,7 @@ function TodoCount(){
     return(
       <div>
         
-        <h1 className={`todoCount-text incompleted ${!loading && allCompleted == undefined && "completed"}`}>Aun no agregaste TODOS</h1>
+        <h1 className={`todoCount-text incompleted ${!loading && allCompleted == undefined && "completed"}`}>Aún no agregaste TODOS</h1>
 
 
         <h1 className={`todoCount-text incompleted ${!loading && allCompleted && "completed"}`}>¡Completaste todos los TODOS!</h1>
@@ -17,6 +17,11 @@ function TodoCount(){
         </h1>
 
         <h1 className={`todoCount-text incompleted ${loading && "completed"}`}>Cargando, espere...</h1>
+
+        <img  className={`flechita incompleted ${!loading && allCompleted == undefined && "completed"}`}
+        
+        src="https://cdn-icons-png.flaticon.com/512/786/786401.png" alt="flecha ayuda"
+        />
 
       </div>
     )

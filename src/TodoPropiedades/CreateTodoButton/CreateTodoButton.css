@@ -1,4 +1,4 @@
-button{
+.addButton{
     width: 90px;
     height: 90px;
     margin-top: 20px;
@@ -12,8 +12,10 @@ button{
     position: absolute;
     bottom: 100px;
     right:70px;
+    z-index: 1;
+    user-select: none; /*Texto no seleccionable */
 }
-button:hover{
+.addButton:hover{
     cursor: pointer;
     transition: 1s;
     rotate: 360deg;
@@ -22,6 +24,6 @@ button:hover{
     color: rgb(0, 0, 0);
     background-color: rgb(0, 255, 247);
 }
-button:not(:hover){
+.addButton:not(:hover){
    transition: 1s;
 }

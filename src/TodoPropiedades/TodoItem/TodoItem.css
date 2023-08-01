@@ -15,6 +15,7 @@ li{
     font-weight: bold;
 
     transition: 1s;
+    position: relative;
 } 
 
 li:hover{
@@ -22,8 +23,12 @@ li:hover{
 }
 .icon-check{
     color: rgb(254, 255, 254);
-    position: relative;
-    right: 50px;
+    position: absolute;
+    left:20px;
+}
+.borrar-item{
+    position: absolute;
+    right:30px;
 }
 .icon-check:hover,.borrar-item:hover{
     cursor: pointer;
