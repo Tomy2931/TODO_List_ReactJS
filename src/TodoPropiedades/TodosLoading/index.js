@@ -1,4 +1,3 @@
-import react from "react";
 import "./TodosLoading.css"
 function TodosLoading () {
    return(
